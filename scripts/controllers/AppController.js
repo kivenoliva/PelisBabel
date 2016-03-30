@@ -1,11 +1,12 @@
 angular.module("pelisbabel").controller("AppController",
-	["$scope","$location","paths", function($scope,$location,paths){
+	["$scope","$location","paths", "autentication", function($scope,$location,paths, autentication){
 		var controller = this;
 		//Controller properties
 		controller.titles = {};
 		controller.titles[paths.home] = "Películas Babel";
 		controller.titles[paths.listado] = "Listado Películas";
 		controller.titles[paths.alquiladas] = "Mis películas alquiladas";
+		controller.titles[paths.login] = "Login";
 
 		//Model init
 		$scope.model = {
@@ -15,6 +16,12 @@ angular.module("pelisbabel").controller("AppController",
 		//Scope EventListeners
 		$scope.$on("$locationChangeSuccess", function(event,currentRoute){
 			$scope.model.title = controller.titles[$location.path()] || "404 Not Found";
+			if(!autentication.getLogin()[0]){
+				console.log(autentication.getLogin()[0]);
+				$location.url(paths.login);
+			}else{
+				console.log(autentication.getLogin()[0]);
+			}
 		});
 
 		$scope.$on("ChangeTitle", function(event,title){

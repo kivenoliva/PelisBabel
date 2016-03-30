@@ -4,7 +4,13 @@ angular.module("pelisbabel",['ngRoute',"ngSanitize"]).config(
 		//Configuro las URLS de la app
 		$routeProvider
 			.when(paths.home, {
-				redirectTo: 'views/login.html'
+				redirectTo: paths.listado
+			}).when(paths.login, {
+				templateUrl: 'views/login.html'
+			}).when(paths.listado, {
+				templateUrl: 'views/listado.html'
+			}).when(paths.alquiladas, {
+				templateUrl: 'views/alquiladas.html'
 			}).otherwise({
 				templateUrl: 'views/404.html'
 			})
