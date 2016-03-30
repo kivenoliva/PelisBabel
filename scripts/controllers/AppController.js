@@ -11,7 +11,7 @@ angular.module("pelisbabel").controller("AppController",
 		//Model init
 		$scope.model = {
 			title: ""
-		}
+		};
 
 		//Scope EventListeners
 		$scope.$on("$locationChangeSuccess", function(event,currentRoute){
