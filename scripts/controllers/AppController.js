@@ -3,14 +3,14 @@ angular.module("pelisbabel").controller("AppController",
 		var controller = this;
 		//Controller properties
 		controller.titles = {};
-		controller.titles[paths.home] = "Películas Babel";
-		controller.titles[paths.listado] = "Listado Películas";
-		controller.titles[paths.alquiladas] = "Mis películas alquiladas";
+		controller.titles[paths.home] = "Peliculas Babel";
+		controller.titles[paths.listado] = "Listado Peliculas";
+		controller.titles[paths.alquiladas] = "Mis peliculas alquiladas";
 
 		//Model init
 		$scope.model = {
 			title: ""
-		}
+		};
 
 		//Scope EventListeners
 		$scope.$on("$locationChangeSuccess", function(event,currentRoute){

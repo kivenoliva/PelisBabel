@@ -1,4 +1,4 @@
-angular.module("pelisbabel", []).service("autentication", ["$log", function($log){
+angular.module("pelisbabel").service("autentication", ["$log", function($log){
 	
 	var userLogin = [false, ""];
 
