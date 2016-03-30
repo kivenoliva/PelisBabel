@@ -1,13 +1,10 @@
 angular.module("pelisbabel").directive("moviesList", function(){
+	return {
 
-    return {
-
-        restrict:"AE",
-        scope: {
-            model:"=items",
-        },
-        templateUrl:"views/moviesList.html"
-    };
-
-
+		restrict:"AE",
+		scope: {
+			model:"=items",
+		},
+		templateUrl:"views/moviesList.html"
+	};
 });

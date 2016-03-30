@@ -2,7 +2,6 @@ angular.module("pelisbabel").service("APIClient",
     ["$http", "$q", "api_paths", function($http, $q, api_paths){
 
         this.apiRequest = function(url){
-
             var deferred = $q.defer();
             $http.get(url).then(
 
@@ -15,16 +14,11 @@ angular.module("pelisbabel").service("APIClient",
                 }
 
             );
-
             return deferred.promise;
         }
-
-
         this.getMovies = function(){
-            return this.apiRequest(api_paths.movies);
-            
+            return this.apiRequest(api_paths.movies);    
         };
-
         this.createMovie = function(movie){
             //Crear el objeto diferido
             var deferred = $q.defer();
@@ -42,8 +36,5 @@ angular.module("pelisbabel").service("APIClient",
             //devolver la promesa
             return deferred.promise; 
         }
-
-        
-
     }]
 );

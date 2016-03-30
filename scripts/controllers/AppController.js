@@ -12,6 +12,7 @@ angular.module("pelisbabel").controller("AppController",
 		$scope.model = {
 			title: ""
 		};
+		$scope.user = "";
 
 		//Scope EventListeners
 		$scope.$on("$locationChangeSuccess", function(event,currentRoute){
@@ -19,6 +20,7 @@ angular.module("pelisbabel").controller("AppController",
 			if(!autentication.getLogin()[0]){
 				console.log("No estas logeado");
 				$location.url(paths.login);
+				
 			}else{
 				console.log("Estas logueado con usuario : ",autentication.getLogin()[1] );
 			}

@@ -1,8 +1,11 @@
-angular.module("pelisbabel").controller("ListadoController",
+angular.module("pelisbabel").controller("AlquiladasController",
 	["$scope","$location","paths", "APIClient", function($scope,$location,paths, APIClient){
+		
 		// Scope init
 		$scope.uiState = "loading";
 		$scope.model = [];
+
+		
 		// Controller start
 		APIClient.getMovies().then(
 
@@ -23,5 +26,8 @@ angular.module("pelisbabel").controller("ListadoController",
 				$scope.uiState = "error";
 			}
 		);
-    }]
+
+
+
+	}]
 );

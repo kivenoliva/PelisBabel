@@ -1,28 +1,28 @@
 <table class="table table-striped">
-   <thead>
-       <tr>
-           <th>Caratúla</th>
-           <th>Título</th>
-           <th>Propietario Película</th>                        
-           <th>Disponibilidad</th>
-       </tr>
-       
-   </thead>
-   <tbody>
-       <tr ng-repeat="item in model | filter:query">
-           <td>
-               <img ng-src="{{::item.caratula}}" width="100">
-           </td>
-           <td>
-               <h4>{{::item.titulo}}</h4>
-           </td>
-           <td>
-               <h4>{{::item.propietario}}</h4>
-           </td>
-           <td>
-               <h2><span ng-show="item.alquilada[0]=='Alquilada'" class="label label-success" >{{item.alquilada[0]}}</span></h2>
-               <h2><span ng-show="item.alquilada[0]=='No alquilada'" class="label label-danger" >{{item.alquilada[0]}}</span></h2>
-           </td>
-       </tr>
-   </tbody>
+    <thead>
+        <tr>
+            <th>Caratúla</th>
+            <th>Título</th>
+            <th>Propietario Película</th>                        
+            <th>Disponibilidad</th>
+        </tr>
+        
+    </thead>
+    <tbody>
+        <tr ng-repeat="item in model | filter:query">
+            <td>
+                <img ng-src="{{::item.caratula}}" width="100">
+            </td>
+            <td>
+                <h4>{{::item.titulo}}</h4>
+            </td>
+            <td>
+                <h4>{{::item.propietario}}</h4>
+            </td>
+            <td>
+                <h2><span ng-show="item.alquilada[0]=='Alquilada'" class="label label-success" >{{item.alquilada[0]}}</span></h2>
+                <h2><span ng-show="item.alquilada[0]=='No alquilada'" class="label label-danger" >{{item.alquilada[0]}}</span></h2>
+            </td>
+        </tr>
+    </tbody>
 </table>
