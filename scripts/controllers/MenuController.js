@@ -1,6 +1,6 @@
 //En el módulo moviedb, defino el controlador.
 angular.module("pelisbabel").controller("MenuController",
-	["$scope","$location","paths",function($scope,$location,paths){
+	["$scope","$location","paths", "autentication",function($scope,$location,paths,autentication){
 		//Scope init
 
 		$scope.model = {
@@ -16,6 +16,12 @@ angular.module("pelisbabel").controller("MenuController",
 				return "";
 			}
 		}
+		$scope.logout = function(){
+
+			autentication.setLogin("",false);
+			console.log("He hecho logout");
+			$location.url(paths.login);			
+		};
 
 		//Scope event listeners
 		$scope.$on("$locationChangeSuccess", function(event,currentRoute){

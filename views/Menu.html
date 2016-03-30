@@ -17,10 +17,11 @@
                 <li ng-class="getClassForItem(paths.alquiladas)">
                     <a href="#{{::paths.alquiladas}}">Alquiladas</a>
                 </li>
-                <li ng-class="getClassForItem(paths.people)">
-                    <a href="#{{::paths.people}}">Nueva</a>
+                <li ng-class="getClassForItem(paths.nuevaPelicula)">
+                    <a href="#{{::paths.nuevaPelicula}}">Nueva</a>
                 </li>
             </ul>
+            <button class="btn btn-danger pull-right"  ng-click="logout()">Log Out</button>
         </div>
     </div>
 </nav>

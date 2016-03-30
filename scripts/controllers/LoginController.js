@@ -8,7 +8,8 @@ angular.module("pelisbabel").controller("LoginController",
 
 		// Scope init
 		$scope.login = function(){
-			autentication.setLogin($scope.model.name);
+			autentication.setLogin($scope.model.name,true);
+            console.log("Acabo de loguearme con el usuario : ", $scope.model.name);
 			$location.url(paths.listado);			
 		};
 	}]

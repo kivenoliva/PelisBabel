@@ -17,10 +17,10 @@ angular.module("pelisbabel").controller("AppController",
 		$scope.$on("$locationChangeSuccess", function(event,currentRoute){
 			$scope.model.title = controller.titles[$location.path()] || "404 Not Found";
 			if(!autentication.getLogin()[0]){
-				console.log(autentication.getLogin()[0]);
+				console.log("No estas logeado");
 				$location.url(paths.login);
 			}else{
-				console.log(autentication.getLogin()[0]);
+				console.log("Estas logueado con usuario : ",autentication.getLogin()[1] );
 			}
 		});
 
