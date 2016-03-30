@@ -3,62 +3,9 @@
     <div class="container">
         <div class="row">
             <h1 class="text-primary">Listado de Películas</h1>    
-            <table class="table table-striped">
-                <thead>
-                    <tr>
-                        <th>Título</th>
-                        <th>Propietario Película</th>
-                        <th>Caratúla</th>
-                        <th>Disponibilidad</th>
-                    </tr>
-                    
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>
-                            <img src="https://image.tmdb.org/t/p/w185/6bCplVkhowCjTHXWv49UjRPn0eK.jpg" style="width:70px;">
-                        </td>
-                        <td>
-                            <h4>Batman v Superman: El Amanecer de la Justicia</h4>
-                        </td>
-                        <td>
-                            <h5>Kevin Oliva</h5>
-                        </td>
-                        <td>
-                            <h5><span class="label label-danger">Alquilada</span></h5>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <img src="https://image.tmdb.org/t/p/w185/kS3pI9nSLZuX8CAzaQOBF6mQ3uX.jpg" style="width:70px;">
-                        </td>
-                        <td>
-                            <h4>Deadpool </h4>
-                        </td>
-                        <td>
-                            <h5>Guillermo Araujo</h5>
-                        </td>
-                        <td>
-                            <h5><span class="label label-success">Disponible</span></h5>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <img src="https://image.tmdb.org/t/p/w185/xHfhQIK4BNlsGv5Ylx8mVq0hJT1.jpg" style="width:70px;">
-                        </td>
-                        <td>
-                            <h4>Mad Max: Furia en la carretera  </h4>
-                        </td>
-                        <td>
-                            <h5>Guillermo Araujo</h5>
-                        </td>
-                        <td>
-                            <h5><span class="label label-success">Disponible</span></h5>
-                        </td>
-                    </tr>
-                    
-                </tbody>
-            </table>
+
+            <movies-list items="model" ng-show="uiState =='ideal'"></movies-list>     
+
         </div>
     </div>
 </div>

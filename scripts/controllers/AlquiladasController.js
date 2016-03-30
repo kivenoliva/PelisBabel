@@ -1,4 +1,4 @@
-angular.module("pelisbabel").controller("ListadoController",
+angular.module("pelisbabel").controller("AlquiladasController",
 	["$scope","$location","paths", "APIClient", function($scope,$location,paths, APIClient){
 		
 		// Scope init

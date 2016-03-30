@@ -12,13 +12,14 @@ angular.module("pelisbabel").controller("AppController",
 		$scope.model = {
 			title: ""
 		};
+		$scope.user = "";
 
 		//Scope EventListeners
 		$scope.$on("$locationChangeSuccess", function(event,currentRoute){
 			$scope.model.title = controller.titles[$location.path()] || "404 Not Found";
 			if(!autentication.getLogin()[0]){
-				console.log(autentication.getLogin()[0]);
 				$location.url(paths.login);
+				
 			}else{
 				console.log(autentication.getLogin()[0]);
 			}

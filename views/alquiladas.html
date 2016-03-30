@@ -1,3 +1,13 @@
 <div ng-include="'views/Menu.html'"></div>
+<div ng-controller="AlquiladasController">
+    <div class="container">
+        <div class="row">
+            <h1 class="text-primary">Listado de Películas Alquiladas por el Usuario</h1>    
+
+            <movies-list items="model" ng-show="uiState =='ideal'"></movies-list>     
+
+        </div>
+    </div>
+</div>
 
 
