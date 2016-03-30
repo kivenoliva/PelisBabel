@@ -1,0 +1,26 @@
+<nav class="navbar navbar-default" ng-controller="MenuController">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#{{::paths.home}}">Pelis Babel</a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li ng-class="getClassForItem(paths.movies)">
+                    <a href="#{{::paths.movies}}">Listado</a>
+                </li>
+                <li ng-class="getClassForItem(paths.series)">
+                    <a href="#{{::paths.series}}">Alquiladas</a>
+                </li>
+                <li ng-class="getClassForItem(paths.people)">
+                    <a href="#{{::paths.people}}">Nueva</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
