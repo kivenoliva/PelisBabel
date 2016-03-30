@@ -1,0 +1,17 @@
+# dist
+dist/
+
+# Node modules
+node_modules/
+
+# Bower modules
+bower_components/
+
+# CSS
+style.css
+
+#server.py cosas del servidor
+db/ 
+
+
+
