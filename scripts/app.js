@@ -9,6 +9,8 @@ angular.module("pelisbabel",['ngRoute',"ngSanitize"]).config(
 				templateUrl: 'views/login.html'
 			}).when(paths.listado, {
 				templateUrl: 'views/listado.html'
+			}).when(paths.alquiladas, {
+				templateUrl: 'views/alquiladas.html'	
 			}).otherwise({
 				templateUrl: 'views/404.html'
 			})

@@ -6,12 +6,10 @@ angular.module("pelisbabel").service("autentication", ["$log", function($log){
 		
 		userLogin[0] = true;
 		userLogin[1] = user;
-		return userLogin;
 
 	};
 
-	this.setLogin = function(user){
-		
+	this.getLogin = function(){
 		return userLogin;
 
 	};
