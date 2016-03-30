@@ -11,19 +11,5 @@ angular.module("pelisbabel").controller("LoginController",
 			autentication.setLogin($scope.model.name);
 			$location.url(paths.listado);			
 		};
-
-/*
-		console.log($scope.uiState);
-		// Controller init
-		$scope.user = autentication.getLogin();
-		$scope.uiState = 'ideal';
-		console.log($scope.uiState);
-		console.log($scope.user);
-		autentication.setLogin();
-		$scope.user = autentication.getLogin();
-		console.log("HOLA", $scope.user);
-
-*/
-
 	}]
 );
