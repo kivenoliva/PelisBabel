@@ -3,6 +3,14 @@ angular.module("pelisbabel").controller("ListadoController",
 		// Scope init
 		$scope.uiState = "loading";
 		$scope.model = [];
+
+		$scope.alquiler = function(item){
+			console.log("HOLA", item.id);		
+		};
+
+
+
+
 		// Controller start
 		APIClient.getMovies().then(
 
@@ -16,6 +24,8 @@ angular.module("pelisbabel").controller("ListadoController",
 					$scope.uiState = "ideal";
 				}
 			},
+
+			
 
 			//segundo si ha habido error
 			function(data){
