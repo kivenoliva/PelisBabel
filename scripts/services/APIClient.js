@@ -40,11 +40,13 @@ angular.module("pelisbabel").service("APIClient",
             //devolver la promesa
             return deferred.promise; 
         };
-        this.modificarMovie = function(movie){
+        this.modificarMovie = function(movieId, movie){
+
+            var url = URL.resolve(api_paths.movieDetail, {id: movieId});
             //Crear el objeto diferido
             var deferred = $q.defer();
             //Hacer trabajo asíncrono
-            $http.put(api_paths.movies,movie).then(
+            $http.put(url,movie).then(
                 function(response){
                         //resolver la promesa
                         deferred.resolve(response.data);
