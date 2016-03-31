@@ -4,7 +4,8 @@ angular.module("pelisbabel").directive("moviesList", function(){
 		scope: {
 			model:"=items",
 			modo:"@",
-			usuario:"="
+			usuario:"=",
+			getDetailUrl : "&"
 		},
 		templateUrl:"views/moviesList.html"
 	};

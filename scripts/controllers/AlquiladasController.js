@@ -1,13 +1,16 @@
 angular.module("pelisbabel").controller("AlquiladasController",
-	["$scope","$location","paths", "APIClient","autentication", function($scope,$location,paths, APIClient,autentication){
+	["$scope","$location","paths", "APIClient","autentication","URL", 
+	function($scope,$location,paths, APIClient,autentication,URL){
 		
 		// Scope init
 		$scope.uiState = "loading";
 		$scope.model = [];
 		$scope.usuario = autentication.getLogin()[1];
-		console.log("Usuario autenticado dentro de listado",$scope.usuario );
 
-		
+		$scope.getMovieDetailURL = function(movie){
+			console.log("Me han pulsado  : ", movie.id)
+            return URL.resolve(paths.peliculaDetalle, {id: movie.id});
+        }
 		// Controller start
 		APIClient.getMovies().then(
 

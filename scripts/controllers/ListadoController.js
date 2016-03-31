@@ -3,6 +3,9 @@ angular.module("pelisbabel").controller("ListadoController",
 		// Scope init
 		$scope.uiState = "loading";
 		$scope.model = [];
+
+
+		
 		// Controller start
 		APIClient.getMovies().then(
 

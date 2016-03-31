@@ -3,5 +3,7 @@ angular.module("pelisbabel").constant("paths",{
 	listado: "/listado",
 	alquiladas: "/alquiladas",
 	nuevaPelicula: "/nuevapelicula",
-	login:"/login"
+	peliculaDetalle: "/alquiladas/:id",
+	login:"/login",
+	notFound: "/sorry"
 });

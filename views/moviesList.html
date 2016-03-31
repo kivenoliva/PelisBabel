@@ -25,7 +25,9 @@
             </td>
             <td>
                 <button ng-show="modo == 'listado' && item.alquilada =='No alquilada'"type="button" class="btn btn-primary">Alquilar</button>
-                <button ng-show="modo == 'alquiladas'" type="button" class="btn btn-primary">Ver película</button>
+                <a ng-show="modo == 'alquiladas'" href="#{{::getDetailUrl({stuff: item})}}" class="btn btn-primary">
+                    Ver película 
+                </a>
             </td>
         </tr>
     </tbody>

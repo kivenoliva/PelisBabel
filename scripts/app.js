@@ -1,5 +1,5 @@
 //Defino el módulo "pelisbabel"
-angular.module("pelisbabel",['ngRoute',"ngSanitize"]).config(
+angular.module("pelisbabel",['ngRoute',"URL","ngSanitize"]).config(
 	["$routeProvider","paths", function($routeProvider,paths){
 		//Configuro las URLS de la app
 		$routeProvider
@@ -13,6 +13,8 @@ angular.module("pelisbabel",['ngRoute',"ngSanitize"]).config(
 				templateUrl: 'views/alquiladas.html'	
 			}).when(paths.nuevaPelicula, {
 				templateUrl: 'views/nuevapelicula.html'	
+			}).when(paths.peliculaDetalle, {
+				templateUrl: 'views/detallepelicula.html'	
 			}).otherwise({
 				templateUrl: 'views/404.html'
 			})
