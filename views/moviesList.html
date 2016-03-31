@@ -9,7 +9,7 @@
         
     </thead>
     <tbody>
-        <tr ng-repeat="item in model ">
+        <tr ng-repeat="item in model">
             <td>
                 <img ng-src="{{::item.caratula}}" width="100">
             </td>
@@ -20,8 +20,12 @@
                 <h4>{{::item.propietario}}</h4>
             </td>
             <td>
-                <h2><span ng-show="item.alquilada[0]=='Alquilada'" class="label label-success" >{{item.alquilada[0]}}</span></h2>
-                <h2><span ng-show="item.alquilada[0]=='No alquilada'" class="label label-danger" >{{item.alquilada[0]}}</span></h2>
+                <h2><span ng-show="item.alquilada =='Alquilada'" class="label label-danger" >{{item.alquilada}}</span></h2>
+                <h2><span ng-show="item.alquilada =='No alquilada'" class="label label-success" >Disponible</span></h2>
+            </td>
+            <td>
+                <button ng-show="modo == 'listado' && item.alquilada =='No alquilada'"type="button" class="btn btn-primary">Alquilar</button>
+                <button ng-show="modo == 'alquiladas'" type="button" class="btn btn-primary">Ver película</button>
             </td>
         </tr>
     </tbody>
