@@ -9,7 +9,7 @@
         
     </thead>
     <tbody>
-        <tr ng-repeat="item in model">
+        <tr ng-repeat="item in model | filter: { usuario_alquilado: usuario }">
             <td>
                 <img ng-src="{{::item.caratula}}" width="100">
             </td>

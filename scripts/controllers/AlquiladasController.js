@@ -1,9 +1,11 @@
 angular.module("pelisbabel").controller("AlquiladasController",
-	["$scope","$location","paths", "APIClient", function($scope,$location,paths, APIClient){
+	["$scope","$location","paths", "APIClient","autentication", function($scope,$location,paths, APIClient,autentication){
 		
 		// Scope init
 		$scope.uiState = "loading";
 		$scope.model = [];
+		$scope.usuario = autentication.getLogin()[1];
+		console.log("Usuario autenticado dentro de listado",$scope.usuario );
 
 		
 		// Controller start
