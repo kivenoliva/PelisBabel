@@ -21,7 +21,6 @@ angular.module("pelisbabel").service("APIClient",
         };
         this.getMovie = function(movieId){
                 var url = URL.resolve(api_paths.movieDetail, {id: movieId});
-                console.log("HE pedido el getMOvie")
                 return this.apiRequest(url);
         };
         this.createMovie = function(movie){
@@ -40,6 +39,25 @@ angular.module("pelisbabel").service("APIClient",
             );
             //devolver la promesa
             return deferred.promise; 
+        };
+        this.modificarMovie = function(movie){
+            //Crear el objeto diferido
+            var deferred = $q.defer();
+            //Hacer trabajo asíncrono
+            $http.put(api_paths.movies,movie).then(
+                function(response){
+                        //resolver la promesa
+                        deferred.resolve(response.data);
+                },
+                function(response){
+                        //rechazar la promesa
+                        deferred.reject(response.data);
+                }
+            );
+            //devolver la promesa
+            return deferred.promise; 
+
+
         }
     }]
 );

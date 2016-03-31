@@ -24,7 +24,7 @@
                 <h2><span ng-show="item.alquilada =='No alquilada'" class="label label-success" >Disponible</span></h2>
             </td>
             <td>
-                <button ng-show="modo == 'listado' && item.alquilada =='No alquilada'"type="button" class="btn btn-primary">Alquilar</button>
+                <button ng-click="alquiler({stuff:item})" ng-show="modo == 'listado' && item.alquilada =='No alquilada'"type="button" class="btn btn-primary">Alquilar</button>
                 <a ng-show="modo == 'alquiladas'" href="#{{::getDetailUrl({stuff: item})}}" class="btn btn-primary">
                     Ver película 
                 </a>
