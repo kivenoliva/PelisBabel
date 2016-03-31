@@ -4,9 +4,11 @@ angular.module("pelisbabel").controller("AppController",
 		//Controller properties
 		controller.titles = {};
 		controller.titles[paths.home] = "Películas Babel";
-		controller.titles[paths.listado] = "Listado Películas";
-		controller.titles[paths.alquiladas] = "Mis películas alquiladas";
+		controller.titles[paths.listado] = "Listado Peliculas";
+		controller.titles[paths.alquiladas] = "Mis peliculas alquiladas";
 		controller.titles[paths.login] = "Login";
+		controller.titles[paths.nuevaPelicula] = "Pelicula nueva";
+		controller.titles[paths.peliculaDetalle] = "Detalle de la pelicula";
 
 		//Model init
 		$scope.model = {

@@ -11,7 +11,10 @@ angular.module("pelisbabel").controller("MenuController",
 		//Scope methods
 		$scope.getClassForItem = function(item){
 			if($scope.model.selectedItem == item){
+				
+				console.log(item);
 				return "active";
+
 			}else{
 				return "";
 			}
