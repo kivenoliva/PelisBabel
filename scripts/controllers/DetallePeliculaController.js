@@ -5,6 +5,7 @@ angular.module("pelisbabel").controller("DetallePeliculaController",
 		$scope.trustSrc = function() {
 	    	return $sce.trustAsResourceUrl($scope.model.url);
 		}
+
 		APIClient.getMovie($routeParams.id).then(
 			//postMessage(Message, transferList)cula encontrada
 			function(movie){
