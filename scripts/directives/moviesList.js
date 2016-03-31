@@ -3,6 +3,7 @@ angular.module("pelisbabel").directive("moviesList", function(){
 		restrict:"AE",
 		scope: {
 			model:"=items",
+			
 		},
 		templateUrl:"views/moviesList.html"
 	};
