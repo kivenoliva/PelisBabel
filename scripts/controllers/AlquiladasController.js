@@ -29,8 +29,11 @@ angular.module("pelisbabel").controller("AlquiladasController",
 				function(movie){
 					//hacer algo cuando ya me han alquilado esa peli
 					$scope.model.splice(pos, 1);
-					console.log("SCOPE ALQUILADA", $scope.model);
-					console.log("DESALQUILADA");
+					if($scope.model.length == 0){
+						$scope.uiState = "blank";
+					}else{
+						$scope.uiState = "ideal";
+					}
 				}, 
 				//Pelicula no encontrada
 				function(error){
@@ -62,8 +65,8 @@ angular.module("pelisbabel").controller("AlquiladasController",
 			function(data){
 
 				$scope.model = filtrarAlquiladas(data);
-
-				if(data.length == 0){
+				console.log($scope.model.length)
+				if($scope.model.length == 0){
 					$scope.uiState = "blank";
 				}else{
 					$scope.uiState = "ideal";
