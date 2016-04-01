@@ -7,7 +7,7 @@ angular.module("pelisbabel").controller("MenuController",
 			selectedItem: paths.listado
 		};
 		$scope.paths = paths;
-		$scope.view = "login";
+		$scope.view = "";
 
 		//Scope methods
 		$scope.getClassForItem = function(item){
@@ -28,6 +28,14 @@ angular.module("pelisbabel").controller("MenuController",
 		$scope.$on("$locationChangeSuccess", function(event,currentRoute){	
 			$scope.model.selectedItem = $location.path();	
 		});
+
+		$scope.$on("alLogin", function(){	
+			console.log("HOLA");
+			$scope.view = "login";
+		});		
+
+
+
 		pubSub.subscribe($scope, function() {
 			$scope.view = "";
 			console.log("Me ha llegado subscripcion",$scope.view);

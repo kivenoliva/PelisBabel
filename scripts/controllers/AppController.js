@@ -1,5 +1,5 @@
 angular.module("pelisbabel").controller("AppController",
-	["$scope","$location","paths", "autentication", function($scope,$location,paths, autentication){
+	["$scope","$location","paths", "autentication", "pubSub", function($scope,$location,paths, autentication, pubSub){
 		var controller = this;
 		//Controller properties
 		controller.titles = {};
@@ -21,7 +21,9 @@ angular.module("pelisbabel").controller("AppController",
 			$scope.model.title = controller.titles[$location.path()] || "404 Not Found";
 			if(!autentication.getLogin()[0]){
 				console.log("No estas logeado");
+				$scope.$emit("alLogin");
 				$location.url(paths.login);
+
 				
 			}else{
 				console.log("Estas logueado con usuario : ",autentication.getLogin()[1] );
