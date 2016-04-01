@@ -8,7 +8,6 @@ angular.module("pelisbabel").controller("AlquiladasController",
 		$scope.usuario = autentication.getLogin()[1];
 
 		$scope.getMovieDetailURL = function(movie){
-			console.log("Me han pulsado  : ", movie.id)
             return URL.resolve(paths.peliculaDetalle, {id: movie.id});
         }
 		// Controller start

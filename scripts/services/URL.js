@@ -1,6 +1,5 @@
 angular.module("URL",[]).service("URL", ["$log",function($log){
 	this.resolve = function(url,params){
-		console.log("Entro en URL");
 		var finalURL = [];
 		var urlParts = url.split("/");
 		for (var i in urlParts){
