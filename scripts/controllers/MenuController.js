@@ -10,10 +10,8 @@ angular.module("pelisbabel").controller("MenuController",
 		//Scope methods
 		$scope.getClassForItem = function(item){
 			if($scope.model.selectedItem == item){
-				console.log("Entro con item : ", item);
 				return "active";
 			}else{
-				console.log("No entro nunca aqui");
 				return "";
 			}
 		}

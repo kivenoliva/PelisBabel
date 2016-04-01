@@ -38,7 +38,7 @@ module.exports = function (grunt) {
         less: {
             build: {
                 files: {
-                    "dist/style.css": "bower_components/bootstrap/less/bootstrap.less",
+                    "dist/style.css": "less/style.less",
                 }
             }
         },

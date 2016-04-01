@@ -65,7 +65,6 @@ angular.module("pelisbabel").controller("AlquiladasController",
 			function(data){
 
 				$scope.model = filtrarAlquiladas(data);
-				console.log($scope.model.length)
 				if($scope.model.length == 0){
 					$scope.uiState = "blank";
 				}else{

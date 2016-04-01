@@ -1,7 +1,7 @@
 <div ng-include="'views/Menu.html'"></div>
 <div ng-controller="DetallePeliculaController">
     <div class="container">
-        <div class="row">
+        <div class="row" ng-show="videoPlay == false">
             <div class="col-xs-12 col-sm-3">
 				<img ng-src="{{::model.caratula}}" class="img-responsive">
 
@@ -37,11 +37,16 @@
 						<p>{{model.sinopsis}}</p>
 					</div>
 				</div>
+				<div class="row" ng-click="desalquiler()">
+					<button class="btn btn-info">
+                    Visualizar película 
+                </button>
+				</div>
 				
 			</div>
 
         </div>
-    	<div class="row">
+    	<div class="row" ng-show="videoPlay == true">
     		<div class="embed-responsive embed-responsive-16by9">
 	    		<video class="video-detail embed-responsive-item"  type="video/mp4" ng-src="{{trustSrc()}}" controls autoplay muted> 
 				</video>

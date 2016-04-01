@@ -7,7 +7,7 @@ angular.module("pelisbabel").controller("NuevaPeliculaController",
 
 		//Scope methods
 		$scope.guardarPelicula = function(){
-			$scope.model.alquilada = ["No alquilada", ""];
+			$scope.model.alquilada = "No alquilada";
 			$scope.model.fecha_creacion = new Date().toLocaleDateString();
 			$scope.model.fecha_alquiler = "";
 			$scope.model.usuario_alquilado = "";
