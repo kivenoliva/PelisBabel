@@ -6,8 +6,16 @@
 	<link rel="stylesheet" href="dist/style.css" type="text/css">
 </head>
 <body>
-	
-	<div ng-view></div>	
+
+	<div ng-include="'views/Menu.html'" ></div>
+
+    <div class="container">
+    	<div class="row">
+    		<div class="col-xs-12">
+    			 <div ng-view></div>
+    		</div>
+    	</div>
+    </div>
 	
 	<script src="dist/app.js"></script>
 </body>

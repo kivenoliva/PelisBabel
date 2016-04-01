@@ -1,21 +1,14 @@
-<div ng-include="'views/Menu.html'"></div>
 <div ng-controller="AlquiladasController">
-    <div class="container">
-        <div class="row">
+    <h1 class="text-primary">Películas Alquiladas por {{usuario}}</h1>
+    <div class="alert alert-danger" ng-show="uiState == 'error'">
+		Error cargando los datos.
+	</div>
+	<div ng-include="'views/progressBar.html'" ng-show="uiState == 'loading'">
+	</div>
 
-            <h1 class="text-primary">Películas Alquiladas por {{usuario}}</h1>
-            <div class="alert alert-danger" ng-show="uiState == 'error'">
-				Error cargando los datos.
-			</div>
-<!-- 			<div ng-include="'views/progressBar.html'" ng-show="uiState == 'loading'">
-			</div> -->
-
-			<div class="jumbotron" ng-show="uiState == 'blank'">
-				<p class="lead">No existen datos.</p>
-			</div>    
-            <movies-list items="model" desalquiler="desalquiler(movie, index)" get-detail-url="getMovieDetailURL(stuff)" usuario="usuario" modo="alquiladas" ng-show="uiState =='ideal'"></movies-list>   
-        </div>
-    </div>
+	<div class="jumbotron" ng-show="uiState == 'blank'">
+		<p class="lead">No existen datos.</p>
+	</div>    
+    <movies-list items="model" desalquiler="desalquiler(movie, index)" get-detail-url="getMovieDetailURL(stuff)" usuario="usuario" modo="alquiladas" ng-show="uiState =='ideal'"></movies-list>   
 </div>
-
 

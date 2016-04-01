@@ -1,53 +1,48 @@
-<div ng-include="'views/Menu.html'"></div>
 <div ng-controller="DetallePeliculaController">
-    <div class="container">
-        <div class="row">
-            <div class="col-xs-12 col-sm-3">
-				<img ng-src="{{::model.caratula}}" class="img-responsive">
+    <div class="col-xs-12 col-sm-3">
+		<img ng-src="{{::model.caratula}}" class="img-responsive">
 
+	</div>
+	<div class="col-xs-12 col-sm-9">
+		<h1 class="text-primary">{{::model.titulo}}</h1>
+		<div class="row">
+			<div class="col-xs-6">
+				<h3>Propietario : {{::model.propietario}}</h3>
 			</div>
-			<div class="col-xs-12 col-sm-9">
-				<h1 class="text-primary">{{::model.titulo}}</h1>
-				<div class="row">
-					<div class="col-xs-6">
-						<h3>Propietario : {{::model.propietario}}</h3>
-					</div>
-					<div class="col-xs-6">
-						<div class="text-right">
-							<h3 class="text-default">Fecha de Creación : <i>{{::model.fecha_creacion}}</i></h3>
-						</div>
-					</div>
+			<div class="col-xs-6">
+				<div class="text-right">
+					<h3 class="text-default">Fecha de Creación : <i>{{::model.fecha_creacion}}</i></h3>
 				</div>
-				<div class="row">
-					<div class="col-sm-4">
-						<span>Alquilada por : </span><span class="text-danger">{{::model.usuario_alquilado}}</span>
-					</div>
-					<div class="col-sm-4">
-						<div class="text-right">
-							<span class="text-default pull-right">Fecha de alquiler : <i>{{::model.fecha_alquiler | future}}</i></span>
-						</div>
-					</div>
-					<div class="col-sm-4">
-						<span class="label label-danger pull-right">Alquilada</span>
-					</div>
-				</div>
-				<hr> 
-				<div class="row">
-					<div class="col-sm-12">
-						<p>{{model.sinopsis}}</p>
-					</div>
-				</div>
-				
 			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-4">
+				<span>Alquilada por : </span><span class="text-danger">{{::model.usuario_alquilado}}</span>
+			</div>
+			<div class="col-sm-4">
+				<div class="text-right">
+					<span class="text-default pull-right">Fecha de alquiler : <i>{{::model.fecha_alquiler | future}}</i></span>
+				</div>
+			</div>
+			<div class="col-sm-4">
+				<span class="label label-danger pull-right">Alquilada</span>
+			</div>
+		</div>
+		<hr> 
+		<div class="row">
+			<div class="col-sm-12">
+				<p>{{model.sinopsis}}</p>
+			</div>
+		</div>
+		
+	</div>
 
-        </div>
-    	<div class="row">
-    		<div class="embed-responsive embed-responsive-16by9">
-	    		<video class="video-detail embed-responsive-item"  type="video/mp4" ng-src="{{trustSrc()}}" controls autoplay muted> 
-				</video>
-			</div>
-		</div>	
 </div>
-</div>
+<div class="row">
+	<div class="embed-responsive embed-responsive-16by9">
+		<video class="video-detail embed-responsive-item"  type="video/mp4" ng-src="{{trustSrc()}}" controls autoplay muted> 
+		</video>
+	</div>
+</div>	
 
 
