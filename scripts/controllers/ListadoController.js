@@ -5,28 +5,18 @@ angular.module("pelisbabel").controller("ListadoController",
 		$scope.model = [];
 		$scope.usuario = autentication.getLogin()[1];
 		
-		$scope.alquiler = function(item){
-			console.log("HOLA", item.id);		
-			APIClient.getMovie(item.id).then(
-				//postMessage(Message, transferList)cula encontrada
+		$scope.alquiler = function(item, pos){
+			console.log("item", item.id);
+			console.log("pos", pos);
+			var movie = $scope.model[pos];
+			movie.alquilada = "Alquilada";
+			movie.usuario_alquilado = $scope.usuario;
+			APIClient.modificarMovie(item.id, movie).then(
+				//postMessage
 				function(movie){
-					var peliAlquilada = movie;
-					console.log("ANtes de cambiar", peliAlquilada);
-					peliAlquilada.alquilada = "Alquilada";
-					peliAlquilada.usuario_alquilado = $scope.usuario;
-
-					APIClient.modificarMovie(item.id, peliAlquilada).then(
-						//postMessage
-						function(movie){
-							//hacer algo cuando ya me han alquilado esa peli
-							console.log("alquilada");
-							$scope.$emit("cambioAlquiler", movie);
-						}, 
-						//Pelicula no encontrada
-						function(error){
-							$location.url(paths.notFound);
-						}
-					);
+					//hacer algo cuando ya me han alquilado esa peli
+					
+					console.log("alquilada");
 				}, 
 				//Pelicula no encontrada
 				function(error){
@@ -34,34 +24,6 @@ angular.module("pelisbabel").controller("ListadoController",
 				}
 			);
 		};
-
-
-		$scope.$on("cambioAlquiler", function(event,movie){
-
-			APIClient.getMovies().then(
-
-				//primero siempre el succes
-				function(data){
-					$scope.model = data;
-
-					if(data.length == 0){
-						$scope.uiState = "blank";
-					}else{
-						$scope.uiState = "ideal";
-					}
-				},
-
-				
-
-				//segundo si ha habido error
-				function(data){
-					$log.error("Error", data);
-					$scope.uiState = "error";
-				}
-			);
-
-		});
-
 
 		// Controller start
 		APIClient.getMovies().then(

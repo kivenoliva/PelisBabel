@@ -3,7 +3,7 @@
     <div class="container">
         <div class="row">
             <h1 class="text-primary">Listado de Películas Alquiladas por el Usuario</h1>    
-            <movies-list items="model" get-detail-url="getMovieDetailURL(stuff)" usuario="usuario" modo="alquiladas" ng-show="uiState =='ideal'"></movies-list>   
+            <movies-list items="model" desalquiler="desalquiler(movie, index)" get-detail-url="getMovieDetailURL(stuff)" usuario="usuario" modo="alquiladas" ng-show="uiState =='ideal'"></movies-list>   
         </div>
     </div>
 </div>

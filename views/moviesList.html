@@ -24,10 +24,14 @@
                 <h2><span ng-show="item.alquilada =='No alquilada'" class="label label-success" >Disponible</span></h2>
             </td>
             <td>
-                <button ng-click="alquiler({stuff:item})" ng-show="modo == 'listado' && item.alquilada =='No alquilada'"type="button" class="btn btn-primary">Alquilar</button>
+                <button ng-click="alquiler({stuff:item, pos:$index})" ng-show="modo == 'listado' && item.alquilada =='No alquilada'"type="button" class="btn btn-primary">Alquilar</button>
                 <a ng-show="modo == 'alquiladas'" href="#{{::getDetailUrl({stuff: item})}}" class="btn btn-primary">
                     Ver película 
                 </a>
+                <button ng-click="desalquiler({movie:item, index:$index})" ng-show="modo == 'alquiladas'" class="btn btn-primary">
+                    Desalquilar 
+                </button>
+
             </td>
         </tr>
     </tbody>

@@ -6,7 +6,8 @@ angular.module("pelisbabel").directive("moviesList", function(){
 			modo:"@",
 			usuario:"=",
 			getDetailUrl : "&",
-			alquiler:"&"
+			alquiler:"&",
+			desalquiler: "&"
 		},
 		templateUrl:"views/moviesList.html"
 	};

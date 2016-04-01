@@ -25,10 +25,8 @@ angular.module("pelisbabel").controller("MenuController",
 		};
 
 		//Scope event listeners
-		$scope.$on("$locationChangeSuccess", function(event,currentRoute){
-			console.log("ENTRO",$location.path());
-			$scope.model.selectedItem = $location.path();
-			console.log("SALGO",$scope.model.selectedItem);
+		$scope.$on("$locationChangeSuccess", function(event,currentRoute){	
+			$scope.model.selectedItem = $location.path();	
 		});
 	}]
 );
