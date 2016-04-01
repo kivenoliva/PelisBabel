@@ -16,7 +16,6 @@ angular.module("pelisbabel").controller("AlquiladasController",
 			//primero siempre el succes
 			function(data){
 				$scope.model = data;
-
 				if(data.length == 0){
 					$scope.uiState = "blank";
 				}else{

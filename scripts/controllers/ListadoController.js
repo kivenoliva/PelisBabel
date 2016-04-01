@@ -4,7 +4,6 @@ angular.module("pelisbabel").controller("ListadoController",
 		$scope.uiState = "loading";
 		$scope.model = [];
 		$scope.usuario = autentication.getLogin()[1];
-		
 		$scope.alquiler = function(item){
 			console.log("HOLA", item.id);		
 			APIClient.getMovie(item.id).then(
@@ -69,7 +68,7 @@ angular.module("pelisbabel").controller("ListadoController",
 			//primero siempre el succes
 			function(data){
 				$scope.model = data;
-
+				console.log("DEberia decirme que estoy vacio");
 				if(data.length == 0){
 					$scope.uiState = "blank";
 				}else{

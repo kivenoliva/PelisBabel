@@ -2,7 +2,16 @@
 <div ng-controller="ListadoController">
     <div class="container">
         <div class="row">
-            <h1 class="text-primary">Listado de Películas</h1>    
+            <h1 class="text-primary">Listado de Películas</h1>
+            <div class="alert alert-danger" ng-show="uiState == 'error'">
+				Error cargando los datos.
+			</div>
+			<!-- <div ng-include="'views/progressBar.html'" ng-show="uiState == 'loading'">
+			</div> -->
+
+			<div class="jumbotron" ng-show="uiState == 'blank'">
+				<p class="lead">No existen datos.</p>
+			</div>    
             <movies-list alquiler="alquiler(stuff)" items="model" modo="listado" ng-show="uiState =='ideal'"></movies-list>     
         </div>
     </div>
