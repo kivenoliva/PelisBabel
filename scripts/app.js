@@ -1,4 +1,4 @@
-//Defino el módulo "pelisbabel"
+	//Defino el módulo "pelisbabel"
 angular.module("pelisbabel",['ngRoute',"URL","ngSanitize"]).config(
 	["$routeProvider","paths", function($routeProvider,paths){
 		//Configuro las URLS de la app

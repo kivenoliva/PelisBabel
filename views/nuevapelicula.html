@@ -1,54 +1,49 @@
-<div ng-include="'views/Menu.html'"></div>
 <div ng-controller="NuevaPeliculaController">
-    <div class="container">
-        <div class="row">
-            <h1 class="text-primary">Agregar una nueva película</h1>
-            <form name="newMovieForm" novalidate class="form-horizontal" ng-submit="guardarPelicula()">
+    <h1 class="text-primary">Agregar una nueva película</h1>
+    <form name="newMovieForm" novalidate class="form-horizontal" ng-submit="guardarPelicula()">
+        <div class="col-sm-10">
+            <div class="form-group">
+                <label for="titulo" class="col-sm-2 control-label">Título</label>
+                <div class="col-sm-10" >
+                    <input type="text" name="titulo" class="form-control" ng-model="model.titulo" required>
+                    <div ng-show="newMovieForm.titulo.$dirty && newMovieForm.titulo.$error.required" class="alert alert-danger alert-dismissible" role="alert">
+	                  <strong>El título es obligatorio</strong> 
+	                </div>
+                </div> 
+            </div>
+            <div class="form-group">
+                <label for="sinopsis" class="col-sm-2 control-label">Sinopsis</label>
+                <div class="col-sm-10" >
+                    <textarea name="sinopsis" rows="5" class="form-control" ng-model="model.sinopsis"></textarea>
+                </div> 
+            </div>
+            <div class="form-group">
+                <label for="caratula" class="col-sm-2 control-label">Carátula</label>
                 <div class="col-sm-10">
-                    <div class="form-group">
-                        <label for="titulo" class="col-sm-2 control-label">Título</label>
-                        <div class="col-sm-10" >
-                            <input type="text" name="titulo" class="form-control" ng-model="model.titulo" required>
-                            <div ng-show="newMovieForm.titulo.$dirty && newMovieForm.titulo.$error.required" class="alert alert-danger alert-dismissible" role="alert">
-			                  <strong>El título es obligatorio</strong> 
-			                </div>
-                        </div> 
-                    </div>
-                    <div class="form-group">
-                        <label for="sinopsis" class="col-sm-2 control-label">Sinopsis</label>
-                        <div class="col-sm-10" >
-                            <textarea name="sinopsis" rows="5" class="form-control" ng-model="model.sinopsis"></textarea>
-                        </div> 
-                    </div>
-                    <div class="form-group">
-                        <label for="caratula" class="col-sm-2 control-label">Carátula</label>
-                        <div class="col-sm-10">
-                            <input type="url" name="caratula" ng-model="model.caratula" class="form-control" required>
-                            <div ng-show="newMovieForm.caratula.$dirty && newMovieForm.caratula.$error.required" class="alert alert-danger alert-dismissible" role="alert">
-			                  <strong>La carátula es obligatoria.</strong> 
-			                </div>
-			                <div class="alert alert-warning alert-dismissible" role="alert" ng-show="newMovieForm.caratula.$dirty && newMovieForm.caratula.$error.url">
-							  	<strong>Porfavor, escriba una URL correcta.</strong>
-							</div>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="url" class="col-sm-2 control-label">URL de la película.</label>
-                        <div class="col-sm-10">
-                            <input type="url" name="url" ng-model="model.url" class="form-control" required>
-                            <div ng-show="newMovieForm.url.$dirty && newMovieForm.url.$error.required" class="alert alert-danger alert-dismissible" role="alert">
-			                  <strong>La URL de la película es obligatoria.</strong> 
-			                </div>
-			                <div class="alert alert-warning alert-dismissible" role="alert" ng-show="newMovieForm.url.$dirty && newMovieForm.url.$error.url">
-							  	<strong>Porfavor, escriba una URL correcta.</strong>
-							</div>
-                        </div>
-                    </div>
-                    <div>
-                        <button class="btn btn-primary pull-right" type="submit" ng-disabled="newMovieForm.$invalid">Agregar</button>
-                    </div>
-                </div>    
-           
-        </div>
-    </div>
+                    <input type="url" name="caratula" ng-model="model.caratula" class="form-control" required>
+                    <div ng-show="newMovieForm.caratula.$dirty && newMovieForm.caratula.$error.required" class="alert alert-danger alert-dismissible" role="alert">
+	                  <strong>La carátula es obligatoria.</strong> 
+	                </div>
+	                <div class="alert alert-warning alert-dismissible" role="alert" ng-show="newMovieForm.caratula.$dirty && newMovieForm.caratula.$error.url">
+					  	<strong>Porfavor, escriba una URL correcta.</strong>
+					</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="url" class="col-sm-2 control-label">URL de la película.</label>
+                <div class="col-sm-10">
+                    <input type="url" name="url" ng-model="model.url" class="form-control" required>
+                    <div ng-show="newMovieForm.url.$dirty && newMovieForm.url.$error.required" class="alert alert-danger alert-dismissible" role="alert">
+	                  <strong>La URL de la película es obligatoria.</strong> 
+	                </div>
+	                <div class="alert alert-warning alert-dismissible" role="alert" ng-show="newMovieForm.url.$dirty && newMovieForm.url.$error.url">
+					  	<strong>Porfavor, escriba una URL correcta.</strong>
+					</div>
+                </div>
+            </div>
+            <div>
+                <button class="btn btn-primary pull-right" type="submit" ng-disabled="newMovieForm.$invalid">Agregar</button>
+            </div>
+        </div>    
+   
 </div>
