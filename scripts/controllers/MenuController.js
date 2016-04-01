@@ -11,8 +11,8 @@ angular.module("pelisbabel").controller("MenuController",
 		//Scope methods
 		$scope.getClassForItem = function(item){
 			if($scope.model.selectedItem == item){
-				console.log("Dentro de getClassForItem soy el item : ",$scope.model.selectedItem, item);
 				return "active";
+
 			}else{
 				return "";
 			}
