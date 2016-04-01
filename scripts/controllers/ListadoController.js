@@ -12,10 +12,9 @@ angular.module("pelisbabel").controller("ListadoController",
 			movie.alquilada = "Alquilada";
 			movie.usuario_alquilado = $scope.usuario;
 			APIClient.modificarMovie(item.id, movie).then(
-				//postMessage
+				//postMessa
 				function(movie){
 					//hacer algo cuando ya me han alquilado esa peli
-					
 					console.log("alquilada");
 				}, 
 				//Pelicula no encontrada
@@ -31,7 +30,7 @@ angular.module("pelisbabel").controller("ListadoController",
 			//primero siempre el succes
 			function(data){
 				$scope.model = data;
-
+				console.log("DEberia decirme que estoy vacio");
 				if(data.length == 0){
 					$scope.uiState = "blank";
 				}else{

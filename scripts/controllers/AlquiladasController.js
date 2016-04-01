@@ -76,10 +76,5 @@ angular.module("pelisbabel").controller("AlquiladasController",
 				$scope.uiState = "error";
 			}
 		);
-
-
-
-
-
 	}]
 );
