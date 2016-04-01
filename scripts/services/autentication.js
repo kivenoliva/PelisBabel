@@ -22,6 +22,12 @@ angular.module("pelisbabel").service("autentication", ["$log", function($log){
 		return userLogin;
 	};
 
+	this.logout = function(){
+		userLogin[0] = false;
+		userLogin[1] = "";
+		localStorage.setItem("usuarioLogueado", "");
+	}
+
 
 
 	

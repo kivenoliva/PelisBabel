@@ -7,7 +7,15 @@ angular.module("pelisbabel").service('pubSub', ["$rootScope",
             },
 
             publish: function() {
+                console.log("MAndo un publish");
                 $rootScope.$emit('loginSuccess');
+            },
+            subscribeLogout: function(scope, callback) {
+                var handler = $rootScope.$on('loginSuccessLogout', callback);
+            },
+
+            publishLogout: function() {
+                $rootScope.$emit('loginSuccessLogout');
             }
         };
 

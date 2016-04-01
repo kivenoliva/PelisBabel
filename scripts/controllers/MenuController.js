@@ -19,12 +19,9 @@ angular.module("pelisbabel").controller("MenuController",
 		}
 		$scope.logout = function(){
 
-			autentication.setLogin("",false);
+			autentication.logout();
 			console.log("He hecho logout");
-			pubSub.subscribe($scope, function() {
-				$scope.view = "login";
-				console.log("Me ha llegado subscripcion",$scope.view);
-			});
+			pubSub.publishLogout()
 			$location.url(paths.login);			
 		};
 		//Scope event listeners
@@ -33,6 +30,10 @@ angular.module("pelisbabel").controller("MenuController",
 		});
 		pubSub.subscribe($scope, function() {
 			$scope.view = "";
+			console.log("Me ha llegado subscripcion",$scope.view);
+		});
+		pubSub.subscribeLogout($scope, function() {
+			$scope.view = "login";
 			console.log("Me ha llegado subscripcion",$scope.view);
 		});
 	}]
